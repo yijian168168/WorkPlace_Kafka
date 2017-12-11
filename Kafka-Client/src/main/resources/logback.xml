@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 控制台输出配置 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="utf-8">
+            <Pattern>[%date] [%-5level] [%C{40} %line] [%thread] traceLogid:[%X{TRACE_LOG_ID}] dstTraceId:[] %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <!--第三方 jar 日志输出配置 -->
+    <logger name="org.springframework.web.servlet.DispatcherServlet" level="INFO"/>
+    <logger name="org.springframework.web.context.support.XmlWebApplicationContext" level="INFO"/>
+    <logger name="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" level="INFO"/>
+    <logger name="com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry" level="INFO"/>
+    <logger name="com.alibaba.dubbo.config.AbstractConfig" level="INFO"/>
+    <logger name="org.apache.commons" level="INFO"/>
+
+    <!-- 日志输出适配器配置 -->
+    <root level="INFO" name="com.bestpay.bill.pay">
+        <appender-ref ref="stdout"/>
+    </root>
+
+</configuration>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- 控制台输出配置 -->
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder charset="utf-8">
+			<Pattern>[%date{yyyy-MM-dd HH:mm:ss}] [%-5level] %logger %line --%mdc{client} %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+	<!-- 日志输出适配器配置 -->
+	<root level="INFO" name="com.bestpay.bill.pay">
+		<appender-ref ref="stdout"/>
+	</root>
+
+</configuration>
